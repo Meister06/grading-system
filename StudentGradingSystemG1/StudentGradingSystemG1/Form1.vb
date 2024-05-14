@@ -4,7 +4,8 @@ Public Class Form1
     Private currentTextBox As TextBox
     Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
         Dim Form2 As New Form2()
-
+        'txtGrade.Text are the textboxes to input grades in form1
+        'Form2.Label.Text are the labels for grades in form2, they just copy the text from form1
         Form2.Label20.Text = txtGrade1.Text
         Form2.Label21.Text = txtGrade2.Text
         Form2.Label22.Text = txtGrade3.Text
@@ -43,6 +44,7 @@ Public Class Form1
         Dim remarksubject10 As String = GetRemarkForGrade(subjectgrade10)
         Dim remarksubject11 As String = GetRemarkForGrade(subjectgrade11)
 
+        'Form2.Label.Text are the labels for the remarks section
         Form2.Label31.Text = remarksubject1
         Form2.Label32.Text = remarksubject2
         Form2.Label33.Text = remarksubject3
@@ -92,6 +94,7 @@ Public Class Form1
 
         Dim sumGrade As Double = grade1 + grade2 + grade3 + grade4 + grade5 + grade6 + grade7 + grade8 + grade9 + grade10 + grade11
         Dim averageGrade As Double = sumGrade / 11
+        'Form2.lblAverage.Text is the label to display the OVERALL average in form2
         Form2.lblAverage.Text = averageGrade
 
         Dim feedback As String
@@ -104,10 +107,9 @@ Public Class Form1
         Else
             feedback = "Below Average"
         End If
-
+        'Form2.lblRemarks.Text iis the label to give the OVERALL average the OVERALL remarks
         Form2.lblRemarks.Text = feedback
-
-
+        
         Form2.Show()
         Me.Hide()
     End Sub
